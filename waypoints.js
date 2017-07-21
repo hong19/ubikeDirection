@@ -7,6 +7,13 @@ function initMap() {
     });
     directionsDisplay.setMap(map);
 
+    var directionsDisplay2 = new google.maps.DirectionsRenderer;
+    var map2 = new google.maps.Map(document.getElementById('map2'), {
+        zoom: 6,
+        center: {lat: 41.85, lng: -87.65}
+    });
+    directionsDisplay2.setMap(map2);
+
     document.getElementById('submit').addEventListener('click', function() {
         calculateAndDisplayRoute(directionsService, directionsDisplay);
     });
