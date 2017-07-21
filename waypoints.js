@@ -1,3 +1,5 @@
+var app = app || {};
+
 function initMap() {
     var directionsService = new google.maps.DirectionsService;
     var directionsDisplay = new google.maps.DirectionsRenderer;
@@ -14,12 +16,14 @@ function initMap() {
     });
     directionsDisplay2.setMap(map2);
 
+
     document.getElementById('submit').addEventListener('click', function() {
         calculateAndDisplayRoute(directionsService, directionsDisplay);
     });
 }
 
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+    console.log('calculate route');
     var waypts = [];
     var checkboxArray = document.getElementById('waypoints');
     for (var i = 0; i < checkboxArray.length; i++) {
@@ -31,9 +35,11 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
         }
     }
 
+    console.log("app.origin " + app.origin);
+    console.log("app.destination " + app.destination);
     directionsService.route({
-        origin: document.getElementById('start').value,
-        destination: document.getElementById('end').value,
+        origin: app.origin,
+        destination: app.destination,
         waypoints: waypts,
         optimizeWaypoints: true,
         travelMode: 'DRIVING'
@@ -57,5 +63,4 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
         }
     });
 }
-
 initMap();
