@@ -1,3 +1,5 @@
+var app = app || {};
+
 // This example displays an address form, using the autocomplete feature
 // of the Google Places API to help users fill in the information.
 
@@ -38,8 +40,11 @@ function fillInAddress() {
 
     if (place) {
         console.log('autocomplete');
-        console.log('lat ' + place.geometry.location.lat());
-        console.log('lng ' + place.geometry.location.lng());
+        app.origin = app.origin || {};
+        app.origin.lat = place.geometry.location.lat();
+        app.origin.lng = place.geometry.location.lng();
+        console.log('lat ' + app.origin.lat);
+        console.log('lng ' + app.origin.lng);
     }
 
     // Get each component of the address from the place details
