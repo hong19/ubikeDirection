@@ -36,6 +36,12 @@ function fillInAddress() {
         document.getElementById(component).disabled = false;
     }
 
+    if (place) {
+        console.log('autocomplete');
+        console.log('lat ' + place.geometry.location.lat());
+        console.log('lng ' + place.geometry.location.lng());
+    }
+
     // Get each component of the address from the place details
     // and fill the corresponding field on the form.
     for (var i = 0; i < place.address_components.length; i++) {
