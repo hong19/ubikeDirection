@@ -87,26 +87,14 @@
     <div id="directions-panel"></div>
 </div>
 <div>
-    <ul></ul>
+    <ul id="ubike-list"></ul>
 </div>
+</body>
+
 <script src="./waypoints.js"></script>
-<script>
-
-    $(function(){
-        $.getJSON('YouBikeTP.json',function(data){
-            console.log('success');
-            console.log(data.retVal);
-            $.each(data.retVal,function(i,stop){
-                $('ul').append('<li>'+ stop.ar + stop.lat + stop.lng + '</li>');
-            });
-        }).error(function(){
-            console.log('error');
-        });
-    });
-
-</script>
+<script src="./importUbikeStops.js"></script>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeZPQVkcQJafGmCLh3Oexcq2JYYDNHDuE&callback=initMap">
 </script>
-</body>
+
 </html>
