@@ -15,9 +15,9 @@ $("#start-direct").click(function() {
 });
 
 function findClosestStop(target, ubikeStops) {
-    var minDistance = 1000.0;
+    var minDistance = 100000.0;
     var closestStopIndex = 0;
-    var distance = 1000.0;
+    var distance = 100000.0;
 
 
     for (var stopIndex in ubikeStops) {
