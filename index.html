@@ -4,6 +4,7 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <title>Waypoints in directions</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
     <style>
         #right-panel {
             font-family: 'Roboto','sans-serif';
@@ -138,6 +139,15 @@
             }
         });
     }
+    $(function(){
+        $.getJSON('YouBikeTP.json',function(data){
+            console.log('success');
+            console.log(data);
+        }).error(function(){
+            console.log('error');
+        });
+    });
+
 </script>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeZPQVkcQJafGmCLh3Oexcq2JYYDNHDuE&callback=initMap">
