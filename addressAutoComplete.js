@@ -31,7 +31,8 @@ function initAutocomplete() {
     // When the user selects an address from the dropdown, populate the address
     // fields in the form.
     autocomplete.addListener('place_changed', fillInAddress);
-    
+    autocompleteDestination.addListener('place_changed', getDestinationLocation);
+
 }
 
 function fillInAddress() {
@@ -63,10 +64,25 @@ function fillInAddress() {
     }
 }
 
+function getDestinationLocation() {
+    // Get the place details from the autocomplete object.
+    var place = autocompleteDestination.getPlace();
+
+    if (place) {
+        console.log('autocomplete destination');
+        app.destination = app.destination || {};
+        app.destination.lat = place.geometry.location.lat();
+        app.destination.lng = place.geometry.location.lng();
+        console.log('lat ' + app.destination.lat);
+        console.log('lng ' + app.destination.lng);
+    }
+}
+
+
+
 // Bias the autocomplete object to the user's geographical location,
 // as supplied by the browser's 'navigator.geolocation' object.
 function geolocate() {
-    console.log('hello');
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
             var geolocation = {
