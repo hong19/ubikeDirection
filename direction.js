@@ -5,7 +5,12 @@ $("#start-direct").click(function() {
     if(app.origin) {
         console.log(app.origin);
         //console.log(app.ubikeStops);
-        findClosestStop(app.origin, app.ubikeStops);
+        app.originUbikeStop = findClosestStop(app.origin, app.ubikeStops);
+    }
+
+    if(app.destination) {
+        console.log(app.destination);
+        app.destinationUbikeStop = findClosestStop(app.destination, app.ubikeStops);
     }
 });
 
@@ -28,7 +33,13 @@ function findClosestStop(target, ubikeStops) {
         }
     }
 
+
     console.log('closest stop:');
     console.log(ubikeStops[closestStopIndex]);
     console.log('min distance:' + minDistance);
+
+    return {
+        lat: ubikeStops[closestStopIndex].lat,
+        lng: ubikeStops[closestStopIndex].lng
+    };
 }
