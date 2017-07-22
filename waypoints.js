@@ -34,18 +34,17 @@ function initMap() {
     };
 }
 
-function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+function calculateAndDisplayRoute(directionsService, directionsDisplay, origin, destination, travelMode) {
     console.log('calculate route');
 
     console.log("origin:");
-    console.log(app.origin);
+    console.log(origin);
     console.log("destination:");
-    console.log(app.originUbikeStop);
+    console.log(destination);
     directionsService.route({
-        origin: app.origin,
-        destination: app.originUbikeStop,
-        optimizeWaypoints: true,
-        travelMode: 'DRIVING'
+        origin: origin,
+        destination: destination,
+        travelMode: travelMode
     }, function(response, status) {
         if (status === 'OK') {
             directionsDisplay.setDirections(response);
