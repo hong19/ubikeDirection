@@ -17,9 +17,10 @@ function initMap() {
     directionsDisplay2.setMap(map2);
 
 
-    document.getElementById('submit').addEventListener('click', function() {
-        calculateAndDisplayRoute(directionsService, directionsDisplay);
-    });
+    app.maps = {
+        directionsService: directionsService,
+        directionsDisplay: directionsDisplay
+    };
 }
 
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {

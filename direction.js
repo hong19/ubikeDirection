@@ -12,6 +12,10 @@ $("#start-direct").click(function() {
         console.log(app.destination);
         app.destinationUbikeStop = findClosestStop(app.destination, app.ubikeStops);
     }
+
+
+    console.log('start calculate route');
+    calculateAndDisplayRoute(app.maps.directionsService, app.maps.directionsDisplay);
 });
 
 function findClosestStop(target, ubikeStops) {
