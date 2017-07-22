@@ -27,37 +27,49 @@
 
         #map {
             width: 100%;
-            height: 300px;
+            height: 600px;
             margin-bottom: 15px;
             border: 2px solid #fff;
         }
-
     </style>
 </head>
 <body>
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col col-lg-2">
+        <div class="col col-lg-4">
+
+        </div>
+        <div class="col col-lg-4 ">
             <!--auto complete-->
-            <div id="locationField">
-                <input id="autocomplete" placeholder="Enter your address" type="text"></input>
-                <input id="autocomplete-destination" placeholder="Enter your address" type="text"></input>
+            <div class="form-group">
+                <label>Origin</label>
+                <input id="autocomplete" class="form-control" placeholder="Enter your address" type="text"></input>
             </div>
-            <button id="start-direct">開始規劃</button>
-            <div>
+            <div class="form-group">
+                <label>Destination</label>
+                <input id="autocomplete-destination" class="form-control" placeholder="Enter your address" type="text"></input>
+            </div>
+            <button id="start-direct" class="btn btn-primary">Start</button>
+            <div class="form-group">
                 <label>A to B by foot: </label>
-                <label id="a2b-duration"></label>分
+                <label id="a2b-duration"></label>
+                <label>min</label>
             </div>
-            <div>
-                <label>B to C by ubike: </label>
-                <label id="b2c-duration"></label>分
+            <div class="form-group">
+                <label>B to C by Ubike: </label>
+                <label id="b2c-duration"></label>
+                <label>min</label>
             </div>
-            <label>C to D by foot: </label>
-            <label id="c2d-duration"></label>分
-            <div>
+            <div class="form-group">
+                <label>C to D by foot: </label>
+                <label id="c2d-duration"></label>
+                <label>min</label>
+            </div>
+            <div class="form-group">
                 <label>Total Duration: </label>
-                <label id="total-duration"></label>分
+                <label id="total-duration"></label>
+                <label>min</label>
             </div>
         </div>
     </div>
