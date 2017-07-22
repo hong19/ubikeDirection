@@ -9,28 +9,11 @@ function initMap() {
     });
     directionsDisplay1.setMap(map);
 
-    var directionsDisplay2 = new google.maps.DirectionsRenderer;
-
-    var map2 = new google.maps.Map(document.getElementById('map2'), {
-        zoom: 12,
-        center: {lat: 25.0549876, lng: 121.4039194}
-    });
-    directionsDisplay2.setMap(map2);
-
-
-    var directionsDisplay3 = new google.maps.DirectionsRenderer;
-    var map3 = new google.maps.Map(document.getElementById('map3'), {
-        zoom: 12,
-        center: {lat: 25.0549876, lng: 121.4039194}
-    });
-    directionsDisplay3.setMap(map3);
 
 
     app.googleMap = {
         directionsService: directionsService,
-        directionsDisplay1: directionsDisplay1,
-        directionsDisplay2: directionsDisplay2,
-        directionsDisplay3: directionsDisplay3
+        directionsDisplay1: directionsDisplay1
     };
 }
 
@@ -59,9 +42,7 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
             console.log(response);
             var route = response.routes[0];
 
-
             var bikeFootSpeedRatio = 2.5;
-
             var a2bDuration = route.legs[0].duration.value / 60;
             var b2cDuration = route.legs[1].duration.value / 60 / bikeFootSpeedRatio;
             var c2dDuration = route.legs[2].duration.value / 60;
