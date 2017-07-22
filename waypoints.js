@@ -9,28 +9,11 @@ function initMap() {
     });
     directionsDisplay1.setMap(map);
 
-    var directionsDisplay2 = new google.maps.DirectionsRenderer;
-
-    var map2 = new google.maps.Map(document.getElementById('map2'), {
-        zoom: 12,
-        center: {lat: 25.0549876, lng: 121.4039194}
-    });
-    directionsDisplay2.setMap(map2);
-
-
-    var directionsDisplay3 = new google.maps.DirectionsRenderer;
-    var map3 = new google.maps.Map(document.getElementById('map3'), {
-        zoom: 12,
-        center: {lat: 25.0549876, lng: 121.4039194}
-    });
-    directionsDisplay3.setMap(map3);
 
 
     app.googleMap = {
         directionsService: directionsService,
-        directionsDisplay1: directionsDisplay1,
-        directionsDisplay2: directionsDisplay2,
-        directionsDisplay3: directionsDisplay3
+        directionsDisplay1: directionsDisplay1
     };
 }
 
