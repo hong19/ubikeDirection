@@ -4,24 +4,24 @@ function initMap() {
     var directionsService = new google.maps.DirectionsService;
     var directionsDisplay1 = new google.maps.DirectionsRenderer;
     var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 6,
-        center: {lat: 41.85, lng: -87.65}
+        zoom: 12,
+        center: {lat: 25.0549876, lng: 121.4039194}
     });
     directionsDisplay1.setMap(map);
 
     var directionsDisplay2 = new google.maps.DirectionsRenderer;
 
     var map2 = new google.maps.Map(document.getElementById('map2'), {
-        zoom: 6,
-        center: {lat: 41.85, lng: -87.65}
+        zoom: 12,
+        center: {lat: 25.0549876, lng: 121.4039194}
     });
     directionsDisplay2.setMap(map2);
 
 
     var directionsDisplay3 = new google.maps.DirectionsRenderer;
     var map3 = new google.maps.Map(document.getElementById('map3'), {
-        zoom: 6,
-        center: {lat: 41.85, lng: -87.65}
+        zoom: 12,
+        center: {lat: 25.0549876, lng: 121.4039194}
     });
     directionsDisplay3.setMap(map3);
 
