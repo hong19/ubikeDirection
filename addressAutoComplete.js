@@ -8,14 +8,6 @@ var app = app || {};
 // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
 var placeSearch, autocomplete, autocompleteDestination;
-var componentForm = {
-    street_number: 'short_name',
-    route: 'long_name',
-    locality: 'long_name',
-    administrative_area_level_1: 'short_name',
-    country: 'long_name',
-    postal_code: 'short_name'
-};
 
 function initAutocomplete() {
     // Create the autocomplete object, restricting the search to geographical
@@ -39,11 +31,7 @@ function fillInAddress() {
     // Get the place details from the autocomplete object.
     var place = autocomplete.getPlace();
 
-    for (var component in componentForm) {
-        document.getElementById(component).value = '';
-        document.getElementById(component).disabled = false;
-    }
-
+    
     if (place) {
         console.log('autocomplete');
         app.origin = app.origin || {};
@@ -51,16 +39,6 @@ function fillInAddress() {
         app.origin.lng = place.geometry.location.lng();
         console.log('lat ' + app.origin.lat);
         console.log('lng ' + app.origin.lng);
-    }
-
-    // Get each component of the address from the place details
-    // and fill the corresponding field on the form.
-    for (var i = 0; i < place.address_components.length; i++) {
-        var addressType = place.address_components[i].types[0];
-        if (componentForm[addressType]) {
-            var val = place.address_components[i][componentForm[addressType]];
-            document.getElementById(addressType).value = val;
-        }
     }
 }
 
