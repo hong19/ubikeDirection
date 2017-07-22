@@ -37,11 +37,13 @@ function initMap() {
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
     console.log('calculate route');
 
-    console.log("app.origin " + app.origin);
-    console.log("app.destination " + app.destination);
+    console.log("origin:");
+    console.log(app.origin);
+    console.log("destination:");
+    console.log(app.originUbikeStop);
     directionsService.route({
         origin: app.origin,
-        destination: app.destination,
+        destination: app.originUbikeStop,
         optimizeWaypoints: true,
         travelMode: 'DRIVING'
     }, function(response, status) {

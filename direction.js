@@ -26,8 +26,8 @@ function findClosestStop(target, ubikeStops) {
 
     for (var stopIndex in ubikeStops) {
         if (ubikeStops.hasOwnProperty(stopIndex)) {
-            var ubikeStopLat = ubikeStops[stopIndex].lat + 0.0;
-            var ubikeStopLng = ubikeStops[stopIndex].lng + 0.0;
+            var ubikeStopLat = parseFloat(ubikeStops[stopIndex].lat);
+            var ubikeStopLng = parseFloat(ubikeStops[stopIndex].lng);
             distance = Math.pow(target.lat - ubikeStopLat, 2) + Math.pow(target.lng - ubikeStopLng, 2);
             if (distance < minDistance) {
                 minDistance = distance;
@@ -43,7 +43,7 @@ function findClosestStop(target, ubikeStops) {
     console.log('min distance:' + minDistance);
 
     return {
-        lat: ubikeStops[closestStopIndex].lat,
-        lng: ubikeStops[closestStopIndex].lng
+        lat: parseFloat(ubikeStops[closestStopIndex].lat),
+        lng: parseFloat(ubikeStops[closestStopIndex].lng)
     };
 }
