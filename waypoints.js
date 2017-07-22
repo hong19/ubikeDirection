@@ -59,7 +59,9 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
             console.log(response);
             var route = response.routes[0];
 
+
             var bikeFootSpeedRatio = 2.5;
+
             var a2bDuration = route.legs[0].duration.value / 60;
             var b2cDuration = route.legs[1].duration.value / 60 / bikeFootSpeedRatio;
             var c2dDuration = route.legs[2].duration.value / 60;
