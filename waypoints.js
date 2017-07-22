@@ -18,10 +18,19 @@ function initMap() {
     directionsDisplay2.setMap(map2);
 
 
+    var directionsDisplay3 = new google.maps.DirectionsRenderer;
+    var map3 = new google.maps.Map(document.getElementById('map3'), {
+        zoom: 6,
+        center: {lat: 41.85, lng: -87.65}
+    });
+    directionsDisplay3.setMap(map3);
+
+
     app.googleMap = {
         directionsService: directionsService,
         directionsDisplay1: directionsDisplay1,
-        directionsDisplay2: directionsDisplay2
+        directionsDisplay2: directionsDisplay2,
+        directionsDisplay3: directionsDisplay3
     };
 }
 
