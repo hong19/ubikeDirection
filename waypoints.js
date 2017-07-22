@@ -34,17 +34,25 @@ function initMap() {
     };
 }
 
-function calculateAndDisplayRoute(directionsService, directionsDisplay, origin, destination, travelMode) {
+function calculateAndDisplayRoute(directionsService, directionsDisplay) {
     console.log('calculate route');
 
-    console.log("origin:");
-    console.log(origin);
-    console.log("destination:");
-    console.log(destination);
+    var waypoints = [];
+    waypoints.push({
+        location: app.originUbikeStop,
+        stopover: true
+    })
+
+    waypoints.push({
+        location: app.destinationUbikeStop,
+        stopover: true
+    })
+
     directionsService.route({
-        origin: origin,
-        destination: destination,
-        travelMode: travelMode
+        origin: app.origin,
+        destination: app.destination,
+        waypoints: waypoints,
+        travelMode: "WALKING"
     }, function(response, status) {
         if (status === 'OK') {
             directionsDisplay.setDirections(response);
