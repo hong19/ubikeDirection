@@ -2,14 +2,15 @@ var app = app || {};
 
 function initMap() {
     var directionsService = new google.maps.DirectionsService;
-    var directionsDisplay = new google.maps.DirectionsRenderer;
+    var directionsDisplay1 = new google.maps.DirectionsRenderer;
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 6,
         center: {lat: 41.85, lng: -87.65}
     });
-    directionsDisplay.setMap(map);
+    directionsDisplay1.setMap(map);
 
     var directionsDisplay2 = new google.maps.DirectionsRenderer;
+
     var map2 = new google.maps.Map(document.getElementById('map2'), {
         zoom: 6,
         center: {lat: 41.85, lng: -87.65}
@@ -17,9 +18,10 @@ function initMap() {
     directionsDisplay2.setMap(map2);
 
 
-    app.maps = {
+    app.googleMap = {
         directionsService: directionsService,
-        directionsDisplay: directionsDisplay
+        directionsDisplay1: directionsDisplay1,
+        directionsDisplay2: directionsDisplay2
     };
 }
 

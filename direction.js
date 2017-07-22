@@ -15,7 +15,7 @@ $("#start-direct").click(function() {
 
 
     console.log('start calculate route');
-    calculateAndDisplayRoute(app.maps.directionsService, app.maps.directionsDisplay);
+    calculateAndDisplayRoute(app.googleMap.directionsService, app.googleMap.directionsDisplay1);
 });
 
 function findClosestStop(target, ubikeStops) {
