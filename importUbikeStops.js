@@ -5,9 +5,6 @@ $(function(){
         console.log('success');
         console.log(data.retVal);
         app.ubikeStops = data.retVal;
-        $.each(data.retVal,function(i,stop){
-            $('#ubike-list').append('<li>'+ stop.ar + stop.lat + stop.lng + '</li>');
-        });
     }).error(function(){
         console.log('error');
     });
