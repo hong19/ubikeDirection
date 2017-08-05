@@ -1,5 +1,4 @@
-var app = app || {};
-
+import location from './locationData';
 // This example displays an address form, using the autocomplete feature
 // of the Google Places API to help users fill in the information.
 
@@ -33,12 +32,10 @@ function getOriginLocation() {
 
 
     if (place) {
-        console.log('autocomplete');
-        app.origin = app.origin || {};
-        app.origin.lat = place.geometry.location.lat();
-        app.origin.lng = place.geometry.location.lng();
-        console.log('lat ' + app.origin.lat);
-        console.log('lng ' + app.origin.lng);
+        location.origin.lat = place.geometry.location.lat();
+        location.origin.lng = place.geometry.location.lng();
+        console.log('lat ' + location.origin.lat);
+        console.log('lng ' + location.origin.lng);
     }
 }
 
@@ -47,12 +44,10 @@ function getDestinationLocation() {
     var place = autocompleteDestination.getPlace();
 
     if (place) {
-        console.log('autocomplete destination');
-        app.destination = app.destination || {};
-        app.destination.lat = place.geometry.location.lat();
-        app.destination.lng = place.geometry.location.lng();
-        console.log('lat ' + app.destination.lat);
-        console.log('lng ' + app.destination.lng);
+        location.destination.lat = place.geometry.location.lat();
+        location.destination.lng = place.geometry.location.lng();
+        console.log('lat ' + location.destination.lat);
+        console.log('lng ' + location.destination.lng);
     }
 }
 
