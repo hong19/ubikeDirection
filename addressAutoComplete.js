@@ -1,4 +1,6 @@
-var app = app || {};
+import $ from "jquery";
+
+//var app = app || {};
 
 // This example displays an address form, using the autocomplete feature
 // of the Google Places API to help users fill in the information.
@@ -7,7 +9,7 @@ var app = app || {};
 // parameter when you first load the API. For example:
 // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
-var placeSearch, autocomplete, autocompleteDestination;
+//var placeSearch, autocomplete, autocompleteDestination;
 
 function initAutocomplete() {
     // Create the autocomplete object, restricting the search to geographical
@@ -75,7 +77,10 @@ function geolocate() {
         });
     }
 }
+var test;
+
+export default test;
 
 
-initAutocomplete();
-$("#autocomplete").focus(geolocate());
+
+
