@@ -4,10 +4,13 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <title>Ubike Route Direction</title>
+
+
     <script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>
-    <script
+    <script type="text/javascript"
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeZPQVkcQJafGmCLh3Oexcq2JYYDNHDuE&libraries=places">
     </script>
+
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -24,6 +27,7 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
+    <script type="text/javascript" src="./dist/bundle.js"></script>
 
 
     <style>
@@ -97,7 +101,7 @@
                         <td><div class="section-column">Ubike Returning Station <span class="circle-word-waypoint">C</span> to Destination <span class="circle-word-destination">D</span></div></td>
                         <td id="c2d-duration"></td>
                     </tr>
-                    <tr>
+                    <tr class="info">
                         <td>Total Duration</td>
                         <td id="total-duration"></td>
                     </tr>
@@ -115,10 +119,10 @@
 
 </body>
 
-<script src="./waypoints.js"></script>
-<script src="./importUbikeStops.js"></script>
-<script src="./addressAutoComplete.js"></script>
-<script src="./direction.js"></script>
+<!--<script src="./waypoints.js"></script>-->
+<!--<script src="./importUbikeStops.js"></script>-->
+<!--<script src="./addressAutoComplete.js"></script>-->
+<!--<script src="./direction.js"></script>-->
 
 
 </html>
