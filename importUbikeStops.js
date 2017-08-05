@@ -1,11 +1,15 @@
-var app = app || {};
+import $ from 'jquery';
 
-$(function(){
-    $.getJSON('YouBikeTP.json',function(data){
-        console.log('success');
-        console.log(data.retVal);
-        app.ubikeStops = data.retVal;
-    }).error(function(){
-        console.log('error');
-    });
-});
+var modules = {
+    ubikeStops: {},
+    importUbikeStops: function importUbikeStops() {
+        $.getJSON('YouBikeTP.json',function(data){
+            //console.log(data.retVal);
+            this.ubikeStops = data.retVal;
+        }).fail(function(){
+            console.log('import ubike stations error');
+        });
+    }
+};
+
+export default modules;
