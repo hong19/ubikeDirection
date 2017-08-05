@@ -1,24 +1,8 @@
-var app = app || {};
+import $ from 'jquery';
 
-$("#start-direct").click(function() {
-    console.log('start direct');
-    if(app.origin) {
-        console.log(app.origin);
-        //console.log(app.ubikeStops);
-        app.originUbikeStop = findClosestStop(app.origin, app.ubikeStops);
-    }
+import location from './locationData';
+import ubikeStops from "./importUbikeStops";
 
-    if(app.destination) {
-        console.log(app.destination);
-        app.destinationUbikeStop = findClosestStop(app.destination, app.ubikeStops);
-    }
-
-
-    console.log('start calculate route');
-    calculateAndDisplayRoute(app.googleMap.directionsService, app.googleMap.directionsDisplay1);
-    //calculateAndDisplayRoute(app.googleMap.directionsService, app.googleMap.directionsDisplay2);
-    //calculateAndDisplayRoute(app.googleMap.directionsService, app.googleMap.directionsDisplay3);
-});
 
 function findClosestStop(target, ubikeStops) {
     var minDistance = 100000.0;
@@ -49,3 +33,28 @@ function findClosestStop(target, ubikeStops) {
         lng: parseFloat(ubikeStops[closestStopIndex].lng)
     };
 }
+
+export function initialStartDirect() {
+    ubikeStops.importUbikeStops();
+
+    $("#start-direct").click(function() {
+        console.log('start direct');
+        if(location.origin) {
+            console.log(location.origin);
+            location.originUbikeStop = findClosestStop(location.origin, ubikeStops.ubikeStops);
+        }
+
+        if(location.destination) {
+            console.log(location.destination);
+            location.destinationUbikeStop = findClosestStop(location.destination, ubikeStops.ubikeStops);
+        }
+
+
+        console.log('start calculate route');
+        calculateAndDisplayRoute(location.googleMap.directionsService, location.googleMap.directionsDisplay1);
+        //calculateAndDisplayRoute(location.googleMap.directionsService, location.googleMap.directionsDisplay2);
+        //calculateAndDisplayRoute(location.googleMap.directionsService, location.googleMap.directionsDisplay3);
+    });
+}
+
+

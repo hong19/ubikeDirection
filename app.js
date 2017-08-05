@@ -1,9 +1,10 @@
 import $ from "jquery";
 
 import {initialAutocomplete} from './addressAutoComplete';
-import ubikeStops from "./importUbikeStops";
+
+import {initialStartDirect} from "./direction";
 
 $(document).ready(function () {
-    ubikeStops.importUbikeStops();
     initialAutocomplete();
+    initialStartDirect();
 });
