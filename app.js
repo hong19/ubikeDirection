@@ -1,4 +1,7 @@
 import $ from "jquery";
 
-import addressAutoComplete from './addressAutoComplete';
+import {initialAutocomplete} from './addressAutoComplete';
 
+$(document).ready(function () {
+    initialAutocomplete();
+});
