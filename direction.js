@@ -2,6 +2,7 @@ import $ from 'jquery';
 
 import location from './locationData';
 import ubikeStops from "./importUbikeStops";
+import waypoint from './waypoints';
 
 
 function findClosestStop(target, ubikeStops) {
@@ -51,7 +52,7 @@ export function initialStartDirect() {
 
 
         console.log('start calculate route');
-        calculateAndDisplayRoute(location.googleMap.directionsService, location.googleMap.directionsDisplay1);
+        waypoint.calculateAndDisplayRoute(waypoint.googleMap.directionsService, waypoint.googleMap.directionsDisplay1);
         //calculateAndDisplayRoute(location.googleMap.directionsService, location.googleMap.directionsDisplay2);
         //calculateAndDisplayRoute(location.googleMap.directionsService, location.googleMap.directionsDisplay3);
     });
