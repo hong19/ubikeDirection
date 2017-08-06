@@ -1,4 +1,6 @@
 import $ from "jquery";
+import React from 'react';
+import ReactDOM from 'react-dom';
 
 import {initialAutocomplete} from './addressAutoComplete';
 
@@ -10,4 +12,6 @@ $(document).ready(function () {
     initialAutocomplete();
     initialStartDirect();
     waypoint.initMap();
+    ReactDOM.render(<h1>hello world</h1>, document.getElementById('root'));
 });
+
