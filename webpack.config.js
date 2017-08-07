@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
     // app entry point
-    entry: './app.js',
+    entry: './src/app.js',
     output: {
         //output directory
         path: path.resolve(__dirname, 'dist'),
@@ -15,12 +15,21 @@ module.exports = {
     module: {
         loaders: [
             {//.js files, using babel-loader
-                test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/
-            },
-            {//.jsx files, using babel-loader
-                test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/
+                test: /\.jsx?$/,
+                loader: 'babel-loader',
+                exclude: /node_modules/,
             },
         ]
+    },
+
+    //Import Path Resolver, the root directory
+    resolve: {
+        modules: [
+            path.resolve('./src'),
+            path.resolve('./node_modules')
+        ],
+        //Automatically resolve certain extensions
+        extensions: ['*', '.js', '.jsx', '.json'],
     },
 
     devServer: {
