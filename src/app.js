@@ -8,11 +8,12 @@ import {initialStartDirect} from "../direction";
 
 import waypoint from '../waypoints';
 
-import {UbikeDirection} from './containers';
+
+import Layout from 'Layout';
 
 $(document).ready(function () {
     initialAutocomplete();
     initialStartDirect();
     waypoint.initMap();
-    ReactDOM.render(<UbikeDirection/>, document.getElementById('root'));
+    ReactDOM.render(<Layout/>, document.getElementById('root'));
 });
