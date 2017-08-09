@@ -8,9 +8,12 @@ class UbikeDirection extends Component {
 
     render() {
         return (
-            <div>
-                ubike direction main
-                <InputAddressForm/>
+            <div className="row">
+                <div className="col col-lg-4">
+                </div>
+                <div className="col col-lg-4 ">
+                   <InputAddressForm/>
+                </div>
             </div>
         )
     }

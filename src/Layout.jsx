@@ -9,6 +9,7 @@ class Layout extends Component {
         return (
             <div className="container-fluid">
                 <Title/>
+                <UbikeDirection/>
             </div>
         );
     }
