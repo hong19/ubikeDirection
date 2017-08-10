@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
-import location from '../../../locationData';
-import ubikeStops from "../../../importUbikeStops";
+import location from './locationData';
+import ubikeStops from "./importUbikeStops";
 
 
 class GoogleMap extends Component {

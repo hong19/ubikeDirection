@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import location from '../../../locationData';
+import location from './locationData';
 
 class InputAddressForm extends Component {
     constructor(props) {
