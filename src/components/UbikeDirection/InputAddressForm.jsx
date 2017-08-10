@@ -1,7 +1,15 @@
 import React, {Component} from 'react';
+import {initialAutocomplete} from '../../../addressAutoComplete';
+import {initialStartDirect} from "../../../direction";
 
 
 class InputAddressForm extends Component {
+
+    componentDidMount() {
+       initialAutocomplete();
+       initialStartDirect();
+    }
+
     render() {
         return (
             <div>
