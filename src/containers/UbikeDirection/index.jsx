@@ -10,7 +10,7 @@ class UbikeDirection extends Component {
 
     render() {
         return (
-            <div>
+            <div className="container-fluid">
                 <div className="row">
                     <div className="col col-lg-4">
                     </div>
@@ -26,9 +26,12 @@ class UbikeDirection extends Component {
                         <DurationTable/>
                     </div>
                 </div>
-                <GoogleMap/>
+                <div className="row">
+                    <div className="col">
+                        <GoogleMap/>
+                    </div>
+                </div>
             </div>
-
         )
     }
 }

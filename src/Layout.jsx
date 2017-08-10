@@ -8,8 +8,16 @@ class Layout extends Component {
     render() {
         return (
             <div className="container-fluid">
-                <Title/>
-                <UbikeDirection/>
+                <div className="row">
+                    <div className="col">
+                        <Title/>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col">
+                        <UbikeDirection/>
+                    </div>
+                </div>
             </div>
         );
     }

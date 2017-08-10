@@ -10,11 +10,7 @@ class GoogleMap extends Component {
 
     render() {
         return (
-            <div className="row">
-                <div className="col">
-                    <div id="map"/>
-                </div>
-            </div>
+            <div id="map"/>
         );
     }
 }
