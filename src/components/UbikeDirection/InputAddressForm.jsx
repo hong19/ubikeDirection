@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {initialStartDirect} from "../../../direction";
 import location from '../../../locationData';
 
 class InputAddressForm extends Component {
@@ -83,7 +82,6 @@ class InputAddressForm extends Component {
 
     componentDidMount() {
        this.initialAutocomplete();
-       initialStartDirect();
     }
 
     render() {
