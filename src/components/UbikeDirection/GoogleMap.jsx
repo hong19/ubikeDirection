@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import $ from 'jquery';
 
 import location from './locationData';
 import ubikeStops from "./importUbikeStops";
