@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import location from './locationData';
 import ubikeStops from "./importUbikeStops";
 
+import styles from './GoogleMap.css';
 
 class GoogleMap extends Component {
     constructor(props) {
