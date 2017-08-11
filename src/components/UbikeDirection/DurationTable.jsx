@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 
+import styles from './DurationTable.css';
 
 class DurationTable extends Component {
     render() {
