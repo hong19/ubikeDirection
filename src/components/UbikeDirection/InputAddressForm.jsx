@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import location from './locationData';
 
+import styles from './InputAddressForm.css';
+
 class InputAddressForm extends Component {
     constructor(props) {
         super(props);
