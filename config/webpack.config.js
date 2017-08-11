@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
     // app entry point
@@ -23,6 +24,14 @@ module.exports = {
                 loader: 'babel-loader',
                 exclude: /node_modules/,
             },
+            {
+                test: /\.woff|\.woff2|\.svg|.eot|\.ttf/,
+                loader: 'url-loader?prefix=font/&limit=10000',
+                options: {
+                    prefix: 'font',
+                    limit: 10000,
+                }
+            },
         ]
     },
 
@@ -40,4 +49,13 @@ module.exports = {
         // enable inline mode
         inline: true
     },
+
+    plugins: [
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery',
+            Popper: ['popper.js', 'default'],
+        })
+    ],
 };
