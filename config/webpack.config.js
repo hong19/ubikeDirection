@@ -14,6 +14,10 @@ module.exports = {
 
     module: {
         loaders: [
+            {
+                test: /\.css$/,
+                loader: 'style-loader!css-loader',
+            },
             {//.js files, using babel-loader
                 test: /\.jsx?$/,
                 loader: 'babel-loader',
