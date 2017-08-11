@@ -4,7 +4,7 @@ var modules = {
     ubikeStops: {},
     importUbikeStops: function importUbikeStops() {
         let that = this;
-        $.getJSON('YouBikeTP.json',function(data){
+        $.getJSON('/assets/json/YouBikeTP.json',function(data){
             //console.log(data.retVal);
             that.ubikeStops = data.retVal;
         }).fail(function(){
